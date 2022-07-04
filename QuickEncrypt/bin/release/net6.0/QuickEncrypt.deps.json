@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "QuickEncrypt/1.0.0": {
+        "dependencies": {
+          "PowerArgs": "3.6.0"
+        },
+        "runtime": {
+          "QuickEncrypt.dll": {}
+        }
+      },
+      "PowerArgs/3.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/PowerArgs.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "QuickEncrypt/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PowerArgs/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ooaQtI6nLOMNQoNfuiEcM1lnPJ9mBaXF99pt1EHnupwqZtC+L5I7IeSjZ/RA+h6Z2DImdFtWn9PNHbhcL9qNKA==",
+      "path": "powerargs/3.6.0",
+      "hashPath": "powerargs.3.6.0.nupkg.sha512"
+    }
+  }
+}

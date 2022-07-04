@@ -1,0 +1,17 @@
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\QuickEncrypt.exe
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\QuickEncrypt.deps.json
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\QuickEncrypt.runtimeconfig.json
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\QuickEncrypt.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\QuickEncrypt.pdb
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\PowerArgs.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.csproj.AssemblyReference.cache
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.AssemblyInfoInputs.cache
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.AssemblyInfo.cs
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.csproj.CoreCompileInputs.cache
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.csproj.CopyComplete
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\refint\QuickEncrypt.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.pdb
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.genruntimeconfig.cache
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\ref\QuickEncrypt.dll
