@@ -6,7 +6,7 @@ namespace QuickEncrypt;
 [ArgExceptionBehavior(ArgExceptionPolicy.StandardExceptionHandling)]
 public class EncryptMethods
 {
-    [ArgActionMethod]
+    [ArgActionMethod,]
     public void EncryptAesCbc(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
@@ -67,7 +67,7 @@ public class EncryptMethods
     }
 
     [ArgActionMethod]
-    public void Md5(string filename)
+    public void Md5([ArgRequired]string filename)
     {
         Console.WriteLine(BitConverter.ToString(Hash.GetMd5(filename)).Replace("-", string.Empty));
     }

@@ -1,0 +1,7 @@
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.exe
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.dll
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.deps.json
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.runtimeconfig.json
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.pdb
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\PowerArgs.dll
+C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\Spectre.Console.dll
