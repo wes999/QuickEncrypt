@@ -37,4 +37,37 @@ public class Decrypt
 
         return aes.DecryptCfb(encrypted, iv);
     }
+
+    public static byte[] DecryptDesCbc(byte[] iv, byte[] key, byte[] encrypted)
+    {
+        DES des = DES.Create();
+
+        des.Key = key;
+        des.IV = iv;
+        des.Mode = CipherMode.CBC;
+
+        return des.DecryptCbc(encrypted, iv);
+    }
+
+    public static byte[] DecryptDesEcb(byte[] iv, byte[] key, byte[] encrypted)
+    {
+        DES des = DES.Create();
+
+        des.Key = key;
+        des.IV = iv;
+        des.Mode = CipherMode.ECB;
+
+        return des.DecryptEcb(encrypted, PaddingMode.None);
+    }
+
+    public static byte[] DecryptDesCfb(byte[] iv, byte[] key, byte[] encrypted)
+    {
+        DES des = DES.Create();
+
+        des.Key = key;
+        des.IV = iv;
+        des.Mode = CipherMode.CFB;
+
+        return des.DecryptCfb(encrypted, iv);
+    }
 }

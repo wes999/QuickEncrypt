@@ -3,7 +3,7 @@
 
 ## Usage
 #### Encryption
-`quickencrypt <command> <file_name> <key> <iv> <output_file>`
+`quickencrypt <algorithm> <file_name> <key> <iv> <output_file>`
 
 #### Hashing
-
+`quickencrypt <algorithm> <file_name>`

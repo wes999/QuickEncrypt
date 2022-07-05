@@ -4,3 +4,4 @@ C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\Q
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.runtimeconfig.json
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.pdb
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\PowerArgs.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\Spectre.Console.dll

@@ -10,12 +10,12 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\obj\DotnetToolSettings.xml" target="tools\net6.0\any\DotnetToolSettings.xml" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.dll" target="tools\net6.0\any\QuickEncrypt.dll" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.deps.json" target="tools\net6.0\any\QuickEncrypt.deps.json" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.runtimeconfig.json" target="tools\net6.0\any\QuickEncrypt.runtimeconfig.json" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\QuickEncrypt.pdb" target="tools\net6.0\any\QuickEncrypt.pdb" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\PowerArgs.dll" target="tools\net6.0\any\PowerArgs.dll" />
-    <file src="C:\Users\Wesma\source\repos\quickencrypt\quickencrypt\bin\Debug\net6.0\publish\Spectre.Console.dll" target="tools\net6.0\any\Spectre.Console.dll" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\DotnetToolSettings.xml" target="tools\net6.0\any\DotnetToolSettings.xml" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.dll" target="tools\net6.0\any\QuickEncrypt.dll" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.deps.json" target="tools\net6.0\any\QuickEncrypt.deps.json" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.runtimeconfig.json" target="tools\net6.0\any\QuickEncrypt.runtimeconfig.json" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\QuickEncrypt.pdb" target="tools\net6.0\any\QuickEncrypt.pdb" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\PowerArgs.dll" target="tools\net6.0\any\PowerArgs.dll" />
+    <file src="C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\Debug\net6.0\publish\Spectre.Console.dll" target="tools\net6.0\any\Spectre.Console.dll" />
   </files>
 </package>
