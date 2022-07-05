@@ -67,13 +67,13 @@ public class EncryptMethods
     }
 
     [ArgActionMethod]
-    public void Md5([ArgRequired]string filename)
+    public void Md5([ArgRequired][ArgDescription("The filename to be hashed")][ArgExistingFile] string filename)
     {
         Console.WriteLine(BitConverter.ToString(Hash.GetMd5(filename)).Replace("-", string.Empty));
     }
 
     [ArgActionMethod]
-    public void Sha256(string filename)
+    public void Sha256([ArgRequired][ArgDescription("The filename to be hashed")][ArgExistingFile] string filename)
     {
         Console.WriteLine(BitConverter.ToString(Hash.GetSha256(filename)).Replace("-", string.Empty));
     }

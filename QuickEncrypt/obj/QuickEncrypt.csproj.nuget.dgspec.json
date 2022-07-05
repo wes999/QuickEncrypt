@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\quickencrypt\\QuickEncrypt.csproj": {}
+    "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\QuickEncrypt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\quickencrypt\\QuickEncrypt.csproj": {
+    "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\QuickEncrypt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\quickencrypt\\QuickEncrypt.csproj",
+        "projectUniqueName": "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\QuickEncrypt.csproj",
         "projectName": "QuickEncrypt",
-        "projectPath": "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\quickencrypt\\QuickEncrypt.csproj",
+        "projectPath": "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\QuickEncrypt.csproj",
         "packagesPath": "C:\\Users\\Wesma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\quickencrypt\\obj\\",
+        "outputPath": "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
