@@ -5,72 +5,42 @@ namespace QuickEncrypt;
 
 public class Encrypt
 {
-    public static byte[] EncryptAesCbc(byte[] iv, byte[] key, byte[] plain, PaddingMode padding)
+    public static byte[] EncryptAes(byte[] iv, byte[] key, byte[] plain, PaddingMode padding, CipherMode mode)
     {
         Aes aes = Aes.Create();
 
         aes.Key = key;
         aes.IV = iv;
-        aes.Mode = CipherMode.CBC;
+        aes.Mode = mode;
         aes.Padding = padding;
 
-        return aes.EncryptCbc(plain, iv, padding);
+        switch (mode)
+        {
+            case CipherMode.CBC: return aes.EncryptCbc(plain, iv, padding); 
+            case CipherMode.ECB: return aes.EncryptEcb(plain, padding); 
+            case CipherMode.CFB: return aes.EncryptCfb(plain, iv, padding);
+
+            default: return Array.Empty<byte>();
+        }
     }
 
-    public static byte[] EncryptAesEcb(byte[] iv, byte[] key, byte[] plain, PaddingMode mode)
-    {
-        Aes aes = Aes.Create();
-
-        aes.Key = key;
-        aes.IV = iv;
-        aes.Mode = CipherMode.ECB;
-        aes.Padding = mode;
-
-        return aes.EncryptEcb(plain, mode);
-    }
-
-    public static byte[] EncryptAesCfb(byte[] iv, byte[] key, byte[] plain)
-    {
-        Aes aes = Aes.Create();
-
-        aes.Key = key;
-        aes.IV = iv;
-        aes.Mode = CipherMode.ECB;
-
-        return aes.EncryptCfb(plain, iv);
-    }
-
-    public static byte[] EncryptDesCbc(byte[] iv, byte[] key, byte[] plain)
+    public static byte[] EncryptDes(byte[] iv, byte[] key, byte[] plain, PaddingMode padding, CipherMode mode)
     {
         DES des = DES.Create();
 
         des.Key = key;
         des.IV = iv;
-        des.Mode = CipherMode.CBC;
+        des.Mode = mode;
+        des.Padding = padding;
 
-        return des.EncryptCbc(plain, iv);
-    }
+        switch (mode)
+        {
+            case CipherMode.CBC: return des.EncryptCbc(plain, iv, padding);
+            case CipherMode.ECB: return des.EncryptEcb(plain, padding);
+            case CipherMode.CFB: return des.EncryptCfb(plain, iv, padding);
 
-    public static byte[] EncryptDesEcb(byte[] iv, byte[] key, byte[] plain)
-    {
-        DES des = DES.Create();
-
-        des.Key = key;
-        des.IV = iv;
-        des.Mode = CipherMode.ECB;
-
-        return des.EncryptEcb(plain, PaddingMode.None);
-    }
-
-    public static byte[] EncryptDesCfb(byte[] iv, byte[] key, byte[] plain)
-    {
-        DES des = DES.Create();
-
-        des.Key = key;
-        des.IV = iv;
-        des.Mode = CipherMode.CFB;
-
-        return des.EncryptCfb(plain, iv);
+            default: return Array.Empty<byte>(); 
+        }
     }
 
     public static byte[] EncryptRc2Cbc(byte[] iv, byte[] key, byte[] plain)
