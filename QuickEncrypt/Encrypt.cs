@@ -43,36 +43,41 @@ public class Encrypt
         }
     }
 
-    public static byte[] EncryptRc2Cbc(byte[] iv, byte[] key, byte[] plain)
+    public static byte[] EncryptRc2(byte[] iv, byte[] key, byte[] plain, PaddingMode padding, CipherMode mode)
     {
         RC2 rc2 = RC2.Create();
 
         rc2.Key = key;
         rc2.IV = iv;
-        rc2.Mode = CipherMode.CBC;
+        rc2.Mode = mode;
+        rc2.Padding = padding;
 
-        return rc2.EncryptCbc(plain, iv);
+        switch (mode)
+        {
+            case CipherMode.CBC: return rc2.EncryptCbc(plain, iv, padding);
+            case CipherMode.ECB: return rc2.EncryptEcb(plain, padding);
+            case CipherMode.CFB: return rc2.EncryptCfb(plain, iv, padding);
+
+            default: return Array.Empty<byte>();
+        }
     }
 
-    public static byte[] EncryptRc2Ecb(byte[] iv, byte[] key, byte[] plain)
+    public static byte[] EncryptTripleDes(byte[] iv, byte[] key, byte[] plain, PaddingMode padding, CipherMode mode)
     {
-        RC2 rc2 = RC2.Create();
+        TripleDES des = TripleDES.Create();
 
-        rc2.Key = key;
-        rc2.IV = iv;
-        rc2.Mode = CipherMode.ECB;
+        des.Key = key;
+        des.IV = iv;
+        des.Mode = mode;
+        des.Padding = padding;
 
-        return rc2.EncryptEcb(plain, PaddingMode.None);
-    }
+        switch (mode)
+        {
+            case CipherMode.CBC: return des.EncryptCbc(plain, iv, padding);
+            case CipherMode.ECB: return des.EncryptEcb(plain, padding);
+            case CipherMode.CFB: return des.EncryptCfb(plain, iv, padding);
 
-    public static byte[] EncryptRc2Cfb(byte[] iv, byte[] key, byte[] plain)
-    {
-        RC2 rc2 = RC2.Create();
-
-        rc2.Key = key;
-        rc2.IV = iv;
-        rc2.Mode = CipherMode.ECB;
-
-        return rc2.EncryptCfb(plain, iv);
+            default: return Array.Empty<byte>();
+        }
     }
 }

@@ -35,7 +35,10 @@ public class EncryptMethods
         byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
         byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
-        File.WriteAllBytes(args.OutFile, Decrypt.DecryptAesCbc(iv, key, enc));
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+
+        File.WriteAllBytes(args.OutFile, Decrypt.DecryptAes(iv, key, enc, padding, mode));
     }
 
     // Aes Methods End
@@ -60,7 +63,36 @@ public class EncryptMethods
         byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
         byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
-        File.WriteAllBytes(args.OutFile, Decrypt.DecryptDesCbc(iv, key, enc));
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+
+        File.WriteAllBytes(args.OutFile, Decrypt.DecryptDes(iv, key, enc, padding, mode));
+    }
+
+    [ArgActionMethod]
+    public void EncryptRc2(EncryptArgs args)
+    {
+        byte[] plain = File.ReadAllBytes(args.FileName);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
+
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+
+        File.WriteAllBytes(args.OutFile, Encrypt.EncryptRc2(iv, key, plain, padding, mode));
+    }
+
+    [ArgActionMethod]
+    public void DecryptRc2(EncryptArgs args)
+    {
+        byte[] enc = File.ReadAllBytes(args.FileName);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
+
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+
+        File.WriteAllBytes(args.OutFile, Decrypt.DecryptRc2(iv, key, enc, padding, mode));
     }
 
     [ArgActionMethod]

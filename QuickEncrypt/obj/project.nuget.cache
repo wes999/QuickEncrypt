@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jVsEG9nCUTVS9nW+GF7v+q0fvv7/fgwu2U9r7NwnVvXT9ZVmIxV+J0fHqfeg81PZjsWYujwxicSKpVDjZC3kLg==",
+  "dgSpecHash": "ERvhUDCYm5SwcZQqzc/fyaI7WQ51GG0AHBycLwNKTjAZSvoxMMgCaBLoWx5zJwFVFNRBI3lUQFZwXkCaPMf56Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Wesma\\source\\repos\\quickencrypt\\QuickEncrypt\\QuickEncrypt.csproj",
+  "projectFilePath": "C:\\Users\\Wesma\\source\\repos\\QuickEncrypt\\QuickEncrypt\\QuickEncrypt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wesma\\.nuget\\packages\\powerargs\\3.6.0\\powerargs.3.6.0.nupkg.sha512",
     "C:\\Users\\Wesma\\.nuget\\packages\\spectre.console\\0.44.0\\spectre.console.0.44.0.nupkg.sha512"
