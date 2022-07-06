@@ -70,4 +70,9 @@ public class Decrypt
 
         return des.DecryptCfb(encrypted, iv);
     }
+
+    public static byte[] DecryptRc2Cbc(byte[] iv, byte[] key, byte[] encrypted)
+    {
+
+    }
 }

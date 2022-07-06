@@ -8,16 +8,18 @@ namespace QuickEncrypt;
 [ArgExceptionBehavior(ArgExceptionPolicy.StandardExceptionHandling)]
 public class EncryptMethods
 {
-    private readonly TextPrompt<byte[]> _keyPrompt = new TextPrompt<byte[]>("Enter the Encryption Key").Secret();
-    private readonly TextPrompt<byte[]> _ivPrompt = new TextPrompt<byte[]>("Enter the Initialization Vector");
+    private readonly SelectionPrompt<PaddingMode> _paddingPrompt = new SelectionPrompt<PaddingMode>().AddChoices(Enum.GetValues<PaddingMode>());
+
+    private readonly TextPrompt<string> _keyPrompt = new TextPrompt<string>("Enter the Encryption Key").Secret();
+    private readonly TextPrompt<string> _ivPrompt = new TextPrompt<string>("Enter the Initialization Vector");
 
     // Aes Methods Start
     [ArgActionMethod]
     public void EncryptAesCbc(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptAesCbc(iv, key, plain));
     }
@@ -26,8 +28,9 @@ public class EncryptMethods
     public void EncryptAesEcb(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptAesEcb(iv, key, plain));
     }
@@ -36,8 +39,8 @@ public class EncryptMethods
     public void EncryptAesCfb(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptAesCfb(iv, key, plain));
     }
@@ -46,8 +49,8 @@ public class EncryptMethods
     public void DecryptAesCbc(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptAesCbc(iv, key, enc));
     }
@@ -56,8 +59,8 @@ public class EncryptMethods
     public void DecryptAesEcb(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptAesEcb(iv, key, enc));
     }
@@ -66,8 +69,8 @@ public class EncryptMethods
     public void DecryptAesCfb(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptAesCfb(iv, key, enc));
     }
@@ -78,8 +81,8 @@ public class EncryptMethods
     public void EncryptDesCbc(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptDesCbc(iv, key, plain));
     }
@@ -88,8 +91,8 @@ public class EncryptMethods
     public void EncryptDesEcb(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptDesEcb(iv, key, plain));
     }
@@ -98,8 +101,8 @@ public class EncryptMethods
     public void EncryptDesCfb(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptDesCfb(iv, key, plain));
     }
@@ -108,8 +111,8 @@ public class EncryptMethods
     public void DecryptDesCbc(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptDesCbc(iv, key, enc));
     }
@@ -118,8 +121,8 @@ public class EncryptMethods
     public void DecryptDesEcb(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptDesCfb(iv, key, enc));
     }
@@ -128,8 +131,8 @@ public class EncryptMethods
     public void DecryptDesCfb(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
-        byte[] key = AnsiConsole.Prompt(_keyPrompt);
-        byte[] iv = AnsiConsole.Prompt(_ivPrompt);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
 
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptDesCfb(iv, key, enc));
     }
