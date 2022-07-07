@@ -1,4 +1,4 @@
-
+﻿
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -9,7 +9,24 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>quickencrypt</ToolCommandName>
     <PackageOutputPath>nupkg</PackageOutputPath>
+    <Company>Wesley MacLeod</Company>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/wes999/QuickEncrypt</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/wes999/QuickEncrypt</RepositoryUrl>
+    <PackageTags>console;terminal;c#;encryption;aes;decrypt</PackageTags>
+    <Description>Encrypt or Hash Files From Your Terminal With AES, DES
+RC2, TripleDES, SHA1, SHA256, SHA384, SHA512 And MD5.</Description>
+    <AssemblyVersion>1</AssemblyVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Wesley MacLeod</Authors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="PowerArgs" Version="3.6.0" />

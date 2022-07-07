@@ -9,13 +9,13 @@ namespace QuickEncrypt;
 public class EncryptMethods
 {
     private readonly SelectionPrompt<PaddingMode> _paddingPrompt = new SelectionPrompt<PaddingMode>().AddChoices(Enum.GetValues<PaddingMode>());
-    private readonly SelectionPrompt<CipherMode> _modePrompt = new SelectionPrompt<CipherMode>().AddChoices(Enum.GetValues<CipherMode>());
+    private readonly SelectionPrompt<CipherMode> _modePrompt = new SelectionPrompt<CipherMode>().AddChoices(CipherMode.CBC, CipherMode.ECB, CipherMode.CFB);
 
-    private readonly TextPrompt<string> _keyPrompt = new TextPrompt<string>("Enter the Encryption Key").Secret();
-    private readonly TextPrompt<string> _ivPrompt = new TextPrompt<string>("Enter the Initialization Vector");
+    private readonly TextPrompt<string> _keyPrompt = new TextPrompt<string>("Encryption Key: ").PromptStyle("red").Secret();
+    private readonly TextPrompt<string> _ivPrompt = new TextPrompt<string>("Enter the Initialization Vector: ").PromptStyle("red");
 
     // Aes Methods Start
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Encrypt The Specified File With The Advanced Encryption Standard (AES) Algorithm")]
     public void EncryptAes(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
@@ -25,10 +25,11 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptAes(iv, key, plain, padding, mode));
     }
 
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Decrypt The Specified File With The Advanced Encryption Standard (AES) Algorithm")]
     public void DecryptAes(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
@@ -38,12 +39,13 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptAes(iv, key, enc, padding, mode));
     }
 
     // Aes Methods End
     // Des Methods Start
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Encrypt The Specified File With The Data Encryption Standard (DES) Algorithm")]
     public void EncryptDes(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
@@ -53,10 +55,11 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptDes(iv, key, plain, padding, mode));
     }
 
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Decrypt The Specified File With The Data Encryption Standard (DES) Algorithm")]
     public void DecryptDes(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
@@ -66,10 +69,11 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptDes(iv, key, enc, padding, mode));
     }
 
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Encrypt The Specified File With The Rivest Cipher 2 (RC2) Algorithm")]
     public void EncryptRc2(EncryptArgs args)
     {
         byte[] plain = File.ReadAllBytes(args.FileName);
@@ -79,10 +83,11 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Encrypt.EncryptRc2(iv, key, plain, padding, mode));
     }
 
-    [ArgActionMethod]
+    [ArgActionMethod, ArgDescription("Decrypt The Specified File With The Rivest Cipher 2 (RC2) Algorithm")]
     public void DecryptRc2(EncryptArgs args)
     {
         byte[] enc = File.ReadAllBytes(args.FileName);
@@ -92,7 +97,38 @@ public class EncryptMethods
         CipherMode mode = AnsiConsole.Prompt(_modePrompt);
         PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
 
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
         File.WriteAllBytes(args.OutFile, Decrypt.DecryptRc2(iv, key, enc, padding, mode));
+    }
+
+    [ArgActionMethod, ArgDescription("Encrypt The Specified File With The Triple Data Encryption Standard (TDES) Algorithm")]
+    public void EncryptTripleDes(EncryptArgs args)
+    {
+        byte[] plain = File.ReadAllBytes(args.FileName);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
+
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
+
+        File.WriteAllBytes(args.OutFile, Encrypt.EncryptTripleDes(iv, key, plain, padding, mode));
+    }
+
+    [ArgActionMethod, ArgDescription("Decrypt The Specified File With The Triple Data Encryption Standard (TDES) Algorithm")]
+    public void DecryptTripleDes(EncryptArgs args)
+    {
+        byte[] enc = File.ReadAllBytes(args.FileName);
+        byte[] key = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_keyPrompt));
+        byte[] iv = Encoding.ASCII.GetBytes(AnsiConsole.Prompt(_ivPrompt));
+
+        CipherMode mode = AnsiConsole.Prompt(_modePrompt);
+        PaddingMode padding = AnsiConsole.Prompt(_paddingPrompt);
+        
+        AnsiConsole.MarkupLine("[green4]Encrypting...[/]");
+
+        File.WriteAllBytes(args.OutFile, Decrypt.DecryptTripleDes(iv, key, enc, padding, mode));
     }
 
     [ArgActionMethod]

@@ -15,3 +15,4 @@ C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\refint\
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.pdb
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\QuickEncrypt.genruntimeconfig.cache
 C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\obj\release\net6.0\ref\QuickEncrypt.dll
+C:\Users\Wesma\source\repos\QuickEncrypt\QuickEncrypt\bin\release\net6.0\Spectre.Console.dll
